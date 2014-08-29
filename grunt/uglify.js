@@ -2,12 +2,13 @@ module.exports = {
   dist: {
     options: {
       compress: {
-        drop_console: true
+        drop_console: false
       }
     },
     files: {
-      '<%= distPath %>/components.min.js': ['<%= distPath %>/components.js'],
-      '<%= distPath %>/chFileSelect.min.js': ['<%= distPath %>/chFileSelect.js']
+      '<%= distPath %>/chFileSelect.min.js': [
+        '<%= distPath %>/chFileSelect.js'
+      ]
     }
   }
 };

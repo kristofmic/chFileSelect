@@ -1,0 +1,29 @@
+{
+  "name": "chFileSelect",
+  "version": "0.0.1",
+  "description": "angular module for cross-browser file select and drop'",
+  "main": "chFileUpload.min.js",
+  "authors": [
+    "chris hourihan"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components",
+    "spec",
+    "grunt",
+    "assets",
+    ".bowerrc",
+    ".gitignore",
+    "demo.html",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "moxie": "~1.2.1"
+  }
+}

@@ -38,8 +38,8 @@
     .factory('FileReader', fileReaderDefinition);
 
   function moxie($window) {
-    $window.mOxie.Env.swf_url = './Moxie.swf';
-    $window.mOxie.Env.xap_url = './Moxie.xap';
+    $window.mOxie.Env.swf_url = './flash/Moxie.swf';
+    $window.mOxie.Env.xap_url = './silverlight/Moxie.xap';
 
     return $window.mOxie;
   }

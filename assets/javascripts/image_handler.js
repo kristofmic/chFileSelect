@@ -12,15 +12,15 @@
   ];
 
   angular.module('ch.FileSelect')
-    .factory('imageHandler', imageHandler);
+    .factory('imageHandler', definitions);
 
   function imageHandler($rootScope, FileReader, FILE_EVENTS, IMAGE_VALIDATIONS) {
-    return onChange;
+    return handleChange;
 
-    function onChange(eventName) {
-      return handleChange;
+    function handleChange(broadcastEventName) {
+      return handler;
 
-      function handleChange(e) {
+      function handler(e) {
         var
           file,
           files = e.target.files,
@@ -61,7 +61,7 @@
       }
 
       function handleLoadEnd(e) {
-        $rootScope.$broadcast(eventName, e.target.result);
+        $rootScope.$broadcast(broadcastEventName, e.target.result);
       }
     }
   }

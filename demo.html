@@ -32,7 +32,7 @@
           <br />
           <br />
           <br />
-          <div ng-switch="!!dropPreview" ch-image-select ch-image-drop style="margin: 10px auto; height:200px; width: 200px; background-color: rgba(0, 0, 0, .06); cursor: pointer;">
+          <div ng-switch="!!dropPreview" ch-image-drop style="margin: 10px auto; height:200px; width: 200px; background-color: rgba(0, 0, 0, .06); cursor: pointer;">
             <img ng-switch-when="true" ng-src="{{dropPreview}}" style="max-height: 200px; max-width: 200px; margin: 0 auto; display: block;"/>
             <label ng-switch-when="false" class="text-center" style="display: block;">
               {{message}}
@@ -42,8 +42,8 @@
       </div>
     </div>
 
-    <script src="dist/components.js"></script>
-    <script src="dist/chFileSelect.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="dist/chFileSelect.min.js"></script>
     <script>
       angular.module('ch.Demo', ['ch.FileSelect'])
       .controller('chDemoController', function($scope, FILE_EVENTS) {
