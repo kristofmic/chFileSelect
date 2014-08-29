@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>chFileSelect Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" ng-app="ch.Demo" ng-controller="chDemoController">
+      <div class="row">
+        <div class="col-xs-12">
+          <br />
+          <br />
+          <br />
+          <br />
+          <button class="btn btn-success btn-large btn-block" ch-image-select>Select an Image</button>
+          <div ng-switch="!!preview" style="margin: 10px auto; height:200px; width: 200px; ">
+            <img ng-switch-when="true" ng-src="{{preview}}" style="max-height: 200px; max-width: 200px; margin: 0 auto; display: block;"/>
+            <label ng-switch-when="false" class="text-center" style="display: block;">
+              {{message}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <br />
+          <br />
+          <br />
+          <br />
+          <div ng-switch="!!dropPreview" ch-image-select ch-image-drop style="margin: 10px auto; height:200px; width: 200px; background-color: rgba(0, 0, 0, .06); cursor: pointer;">
+            <img ng-switch-when="true" ng-src="{{dropPreview}}" style="max-height: 200px; max-width: 200px; margin: 0 auto; display: block;"/>
+            <label ng-switch-when="false" class="text-center" style="display: block;">
+              {{message}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dist/components.js"></script>
+    <script src="dist/chFileSelect.js"></script>
+    <script>
+      angular.module('ch.Demo', ['ch.FileSelect'])
+      .controller('chDemoController', function($scope, FILE_EVENTS) {
+        $scope.message = 'No file chosen';
+
+        $scope.$on(FILE_EVENTS.SELECTED, function(e, base64) {
+          $scope.preview = base64;
+          $scope.$digest();
+        });
+
+        $scope.$on(FILE_EVENTS.DROPPED, function(e, base64) {
+          $scope.dropPreview = base64;
+          $scope.$digest();
+        });
+
+      });
+    </script>
+  </body>
+</html>
