@@ -58,11 +58,15 @@
         function isValidFileSize(file) {
           return file.size <= IMAGE_VALIDATIONS.SIZE;
         }
+
+        function handleLoadEnd(e) {
+          file.base64 = e.target.result;
+
+          $rootScope.$broadcast(broadcastEventName, file);
+        }
       }
 
-      function handleLoadEnd(e) {
-        $rootScope.$broadcast(broadcastEventName, e.target.result);
-      }
+
     }
   }
 

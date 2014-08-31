@@ -49,13 +49,13 @@
       .controller('chDemoController', function($scope, FILE_EVENTS) {
         $scope.message = 'No file chosen';
 
-        $scope.$on(FILE_EVENTS.SELECTED, function(e, base64) {
-          $scope.preview = base64;
+        $scope.$on(FILE_EVENTS.SELECTED, function(e, file) {
+          $scope.preview = file.base64;
           $scope.$digest();
         });
 
-        $scope.$on(FILE_EVENTS.DROPPED, function(e, base64) {
-          $scope.dropPreview = base64;
+        $scope.$on(FILE_EVENTS.DROPPED, function(e, file) {
+          $scope.dropPreview = file.base64;
           $scope.$digest();
         });
 
