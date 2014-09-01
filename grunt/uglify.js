@@ -8,6 +8,9 @@ module.exports = {
     files: {
       '<%= distPath %>/chFileSelect.min.js': [
         '<%= distPath %>/chFileSelect.js'
+      ],
+      '<%= distPath %>/moxie_module.min.js': [
+        '<%= distPath %>/moxie_module.js'
       ]
     }
   }

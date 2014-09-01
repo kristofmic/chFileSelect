@@ -6,8 +6,6 @@ module.exports = {
       }
     },
     src: [
-      '<%= componentsPath %>/moxie/bin/js/moxie.js',
-      '<%= jsPath %>/vendor/moxie_module.js',
       '<%= jsPath %>/file_select_module.js',
       '<%= jsPath %>/**/*.js'
     ],
